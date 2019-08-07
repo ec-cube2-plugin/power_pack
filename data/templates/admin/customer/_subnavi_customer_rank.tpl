@@ -1,0 +1,1 @@
+<li<!--{if $tpl_subno == 'customer_rank'}--> class="on"<!--{/if}--> id="navi-customer-customer_rank"><a href="<!--{$smarty.const.ROOT_URLPATH}--><!--{$smarty.const.ADMIN_DIR}-->customer/customer_rank.php"><span>会員ランク管理</span></a></li>
