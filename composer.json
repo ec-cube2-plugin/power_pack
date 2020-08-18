@@ -1,5 +1,5 @@
 {
-    "name": "ec-cube2/power_pack",
+    "name": "ec-cube2-plugin/power_pack",
     "type": "eccube2-plugin",
     "license": "LGPL-3.0",
     "authors": [
