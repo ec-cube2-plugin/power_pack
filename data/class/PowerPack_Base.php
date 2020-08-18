@@ -303,7 +303,7 @@ abstract class PowerPack_Base extends SC_Plugin_Base
         foreach (static::$arrPrefilters[$deviceType] as $priority => $arrPrefilters) {
             foreach ($arrPrefilters as $arrPrefilter) {
                 list($file, $func) = $arrPrefilter;
-                if ($file == '' || strpos($filename, $file) !== false) {
+                if ($file === '' || strpos($filename, $file) !== false) {
                     if (call_user_func_array($func, array(&$source, $objPage, $filename)) === false) {
                         break 2;
                     }
@@ -332,7 +332,7 @@ abstract class PowerPack_Base extends SC_Plugin_Base
         foreach (static::$arrOutputfilters[$deviceType] as $priority => $arrOutputfilters) {
             foreach ($arrOutputfilters as $arrOutputfilter) {
                 list($file, $func) = $arrOutputfilter;
-                if (strpos($filename, $file) !== false || $file == '') {
+                if (strpos($file === '' || $filename, $file) !== false) {
                     if (call_user_func_array($func, array(&$source, $objPage, $filename)) === false) {
                         break 2;
                     }
