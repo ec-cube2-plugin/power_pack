@@ -1,5 +1,5 @@
 {
-    "name": "eccube2/power_pack",
+    "name": "ec-cube2/power_pack",
     "type": "eccube2-plugin",
     "license": "LGPL-3.0",
     "authors": [
@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "eccube2/plugin-installer": "^1.0"
+        "ec-cube2/plugin-installer": "^1.0"
     },
     "autoload": {
         "psr-0": {"": "data/module/"},
