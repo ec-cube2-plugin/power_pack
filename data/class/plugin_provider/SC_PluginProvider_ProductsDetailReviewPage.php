@@ -11,9 +11,6 @@ class SC_PluginProvider_ProductsDetailReviewPage extends SC_PluginProvider_Base
 {
     public function register(SC_Plugin_Base $plugin, SC_Helper_Plugin $objHelperPlugin, $priority)
     {
-        $objHelperPlugin->addAction("LC_Page_Mypage_Favorite_action_after", array($this, "LC_Page_Mypage_Favorite_action_after"), $priority);
-        $objHelperPlugin->addAction("LC_Page_FrontParts_Bloc_Recommend_action_after", array($this, "LC_Page_FrontParts_Bloc_Recommend_action_after"), $priority);
-
         $provider = $this;
         $objHelperPlugin->addAction("LC_Page_Products_Detail_action_after", function (LC_Page_Products_Detail $objPage) use ($provider) {
             // レビュー取得
