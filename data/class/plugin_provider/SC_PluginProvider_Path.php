@@ -122,12 +122,12 @@ class SC_PluginProvider_Path extends SC_PluginProvider_Base
 
     public function LC_Page_Products_List_action_after(LC_Page_Products_List $objPage)
     {
+        $objPage->arrParentCategories = array();
         if ($objPage->arrSearchData['category_id']) {
             // パンくず用
             $objQuery = SC_Query_Ex::getSingletonInstance();
             $objPage->arrCategory = $objQuery->getRow('dtb_category.*', 'dtb_category', 'dtb_category.category_id = ?', $objPage->arrSearchData['category_id']);
             $parent_category = $objPage->arrCategory;
-            $objPage->arrParentCategories = array();
             while ($parent_category['parent_category_id']) {
                 $objQuery = SC_Query_Ex::getSingletonInstance();
                 $parent_category = $objQuery->getRow('dtb_category.*', 'dtb_category', 'dtb_category.category_id = ?', $parent_category['parent_category_id']);
