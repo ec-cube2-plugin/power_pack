@@ -8,7 +8,7 @@
     ga('require', 'displayfeatures');
     ga('require', 'linkid', 'linkid.js');
     ga('send', 'pageview');
-    <!--{if $smarty.session.customer.customer_id}-->
+    <!--{if $smarty.session.customer}-->
         ga('set', '&uid', '<!--{$smarty.session.customer.customer_id|h}-->');
     <!--{/if}-->
 
