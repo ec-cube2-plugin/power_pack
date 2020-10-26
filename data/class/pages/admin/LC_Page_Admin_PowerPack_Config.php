@@ -2,7 +2,7 @@
 
 /**
  * LC_Page_Admin_PowerPack_Config
- * 
+ *
  * @package PowerPack
  */
 class LC_Page_Admin_PowerPack_Config extends plg_PowerPack_LC_Page_Admin
@@ -43,8 +43,6 @@ class LC_Page_Admin_PowerPack_Config extends plg_PowerPack_LC_Page_Admin
      */
     public function action()
     {
-        $this->setFlashAlert('success');
-
         $arrPlugin = SC_Plugin_Util_Ex::getPluginByPluginCode('PowerPack');
         $arrPluginConfig = unserialize($arrPlugin['free_field1']);
 

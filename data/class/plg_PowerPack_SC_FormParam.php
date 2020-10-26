@@ -489,11 +489,12 @@ class plg_PowerPack_SC_FormParam extends SC_FormParam implements ArrayAccess
      */
     public function setData($arrVal)
     {
-        $arrKeyName = $this->objUpFile->keyname;
-
-        foreach ($arrKeyName as $key => $keyname) {
-            if (array_key_exists($keyname, $arrVal)) {
-                $arrVal['save_'.$keyname] = $arrVal[$keyname];
+        if ($this->objUpFile) {
+            $arrKeyName = $this->objUpFile->keyname;
+            foreach ($arrKeyName as $key => $keyname) {
+                if (array_key_exists($keyname, $arrVal)) {
+                    $arrVal['save_' . $keyname] = $arrVal[$keyname];
+                }
             }
         }
 
