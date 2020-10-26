@@ -24,7 +24,7 @@ class plg_PowerPack_SC_Response extends SC_Response
      */
     public function sendRedirect($location, $arrQueryString = array(), $inheritQueryString = false, $useSsl = null)
     {
-        PowerPack::hook('SC_Response::sendRedirect', array($location, $arrQueryString, $inheritQueryString, $useSsl));
+        PowerPack::hook('SC_Response::sendRedirect', array(&$location, &$arrQueryString, &$inheritQueryString, &$useSsl));
 
         // ローカルフックポイント処理
         $objPlugin = SC_Helper_Plugin_Ex::getSingletonInstance($this->plugin_activate_flg);

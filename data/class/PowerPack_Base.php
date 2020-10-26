@@ -296,7 +296,7 @@ abstract class PowerPack_Base extends SC_Plugin_Base
         if (defined('ADMIN_FUNCTION') && ADMIN_FUNCTION) {
             $deviceType = DEVICE_TYPE_ADMIN;
         } else {
-            $deviceType = $objPage->arrPageLayout['device_type_id'];
+            $deviceType = SC_Display_Ex::detectDevice();
         }
 
         krsort(static::$arrPrefilters[$deviceType]);
@@ -325,14 +325,14 @@ abstract class PowerPack_Base extends SC_Plugin_Base
         if (defined('ADMIN_FUNCTION') && ADMIN_FUNCTION) {
             $deviceType = DEVICE_TYPE_ADMIN;
         } else {
-            $deviceType = $objPage->arrPageLayout['device_type_id'];
+            $deviceType = SC_Display_Ex::detectDevice();
         }
 
         krsort(static::$arrOutputfilters[$deviceType]);
         foreach (static::$arrOutputfilters[$deviceType] as $priority => $arrOutputfilters) {
             foreach ($arrOutputfilters as $arrOutputfilter) {
                 list($file, $func) = $arrOutputfilter;
-                if (strpos($file === '' || $filename, $file) !== false) {
+                if ($file === '' || strpos($filename, $file) !== false) {
                     if (call_user_func_array($func, array(&$source, $objPage, $filename)) === false) {
                         break 2;
                     }
@@ -485,8 +485,8 @@ abstract class PowerPack_Base extends SC_Plugin_Base
     /**
      * Utility function to set a hook point.
      *
-     * @param  string  $hook_point          hook point
-     * @param  SC_SiteView[]   $arrArgs             argument passing to callback function
+     * @param  string  $hook_point hook point
+     * @param  SC_SiteView[] $arrArgs argument passing to callback function
      * @return void
      */
     public static function hook($hook_point, $arrArgs = array())
@@ -508,9 +508,9 @@ abstract class PowerPack_Base extends SC_Plugin_Base
     /**
      * プラグイン コールバック関数を追加する
      *
-     * @param  string   $hook_point フックポイント名
-     * @param  callable $function   コールバック関数名
-     * @param  integer   $priority   同一フックポイント内での実行優先度
+     * @param string $hook_point フックポイント名
+     * @param callable $function コールバック関数名
+     * @param integer $priority 同一フックポイント内での実行優先度
      * @return boolean  成功すればtrue
      */
     public static function addAction($hook_point, $function, $priority = 0)
