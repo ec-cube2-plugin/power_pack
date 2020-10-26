@@ -18,12 +18,15 @@ class SC_PluginProvider_Path extends SC_PluginProvider_Base
         // path
         $objPage->arrPaths = array();
         if ($objPage instanceof LC_Page_Products_Detail) {
-            $arrRelativeCats = reset($objPage->arrRelativeCat);
-            foreach ($arrRelativeCats as $arrRelativeCat) {
-                $objPage->arrPaths[] = array(
-                    'name' => $arrRelativeCat['category_name'],
-                    'path' => ROOT_URLPATH . 'products/list.php?category_id=' . $arrRelativeCat['category_id'],
-                );
+            if ($objPage->arrRelativeCat) {
+                $arrRelativeCats = reset($objPage->arrRelativeCat);
+
+                foreach ($arrRelativeCats as $arrRelativeCat) {
+                    $objPage->arrPaths[] = array(
+                        'name' => $arrRelativeCat['category_name'],
+                        'path' => ROOT_URLPATH . 'products/list.php?category_id=' . $arrRelativeCat['category_id'],
+                    );
+                }
             }
             $objPage->arrPaths[] = array(
                 'name' => $objPage->arrProduct['name'],
