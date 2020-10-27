@@ -42,8 +42,6 @@ class LC_Page_Admin_Customer_CustomerRank extends plg_PowerPack_LC_Page_Admin
      */
     public function action()
     {
-        $this->setFlashAlert('success');
-
         switch ($this->getMode()) {
             case 'delete':
                 $this->lfDeleteData($_POST['id']);

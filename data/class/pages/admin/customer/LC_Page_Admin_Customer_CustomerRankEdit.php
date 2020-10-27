@@ -42,8 +42,6 @@ class LC_Page_Admin_Customer_CustomerRankEdit extends plg_PowerPack_LC_Page_Admi
      */
     public function action()
     {
-        $this->setFlashAlert('success');
-
         $form = new LC_Form_Admin_Customer_CustomerRank();
 
         if ($_REQUEST['id']) {
