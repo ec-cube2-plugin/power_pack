@@ -120,8 +120,6 @@ class PowerPack extends PowerPack_Base
      */
     public function register(SC_Helper_Plugin $objHelperPlugin, $priority)
     {
-        plg_PowerPack_SC_Helper_HandleError::load();
-
         PowerPack::addLoadClassFileChange("SC_CartSession_Ex", "plg_PowerPack_SC_CartSession", POWERPACK_CLASS_REALDIR . "plg_PowerPack_SC_CartSession.php");
         PowerPack::addLoadClassFileChange("SC_Customer_Ex", "plg_PowerPack_SC_Customer", POWERPACK_CLASS_REALDIR . "plg_PowerPack_SC_Customer.php");
         PowerPack::addLoadClassFileChange("SC_CustomerList_Ex", "plg_PowerPack_SC_CustomerList", POWERPACK_CLASS_REALDIR . "plg_PowerPack_SC_CustomerList.php");
