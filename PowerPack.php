@@ -74,8 +74,6 @@ class PowerPack extends PowerPack_Base
         PowerPack::addProvider(new SC_PluginProvider_ResizeImage());
         PowerPack::addProvider(new SC_PluginProvider_ShoppingCv());
         PowerPack::addProvider(new SC_PluginProvider_SmartyEnableScript());
-
-        PowerPack::addProvider(new SC_PluginProvider_FixPaygent());
     }
 
     public function install($arrPlugin, SC_Plugin_Installer $objPluginInstaller = null)

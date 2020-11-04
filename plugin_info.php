@@ -18,7 +18,7 @@ class plugin_info
     static $CLASS_NAME = "PowerPack";
 
     /** プラグインバージョン(必須)：プラグインのバージョン. */
-    static $PLUGIN_VERSION = "1.0.12";
+    static $PLUGIN_VERSION = "1.0.13";
 
     /** 対応バージョン(必須)：対応するEC-CUBEバージョン. */
     static $COMPLIANT_VERSION = "2.13.5";
