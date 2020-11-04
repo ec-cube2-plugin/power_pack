@@ -3,7 +3,7 @@
 /**
  * Class SC_PluginProvider_ProductsAddStatus
  *
- * 
+ *
  */
 class SC_PluginProvider_ProductsAddStatus extends SC_PluginProvider_Base
 {
@@ -22,6 +22,10 @@ class SC_PluginProvider_ProductsAddStatus extends SC_PluginProvider_Base
             $masterData = new SC_DB_MasterData_Ex();
             $objPage->arrSTATUS = $masterData->getMasterData('mtb_status');
             $objPage->arrSTATUS_IMAGE = $masterData->getMasterData('mtb_status_image');
+
+            if (!$objPage->arrFavorite) {
+                $objPage->arrFavorite = array();
+            }
 
             $arrProductId = array();
             foreach ($objPage->arrFavorite as $arrProduct) {
