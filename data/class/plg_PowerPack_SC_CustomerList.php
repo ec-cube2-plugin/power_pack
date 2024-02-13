@@ -16,10 +16,10 @@ class plg_PowerPack_SC_CustomerList extends SC_CustomerList
 
     public function getList()
     {
-        $sql = parent::getList();
+        parent::getList();
 
-        PowerPack::hook('SC_CustomerList::getList', array($this, $sql));
+        PowerPack::hook('SC_CustomerList::getList', array($this));
 
-        return $sql;
+        return $this->getSql(2);
     }
 }
